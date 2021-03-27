@@ -12,7 +12,7 @@ public class ProducerDemoWithKeys {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-        Logger logger = LoggerFactory.getLogger(ProducerDemoWithCallback.class);
+        Logger logger = LoggerFactory.getLogger(ProducerDemoWithKeys.class);
 
         // that is the kafka address
         String bootstrapServers = "127.0.0.1:9092";
@@ -28,7 +28,7 @@ public class ProducerDemoWithKeys {
 
         for (int i=0; i<9; i++) {
 
-            String topic = "another_topic";
+            String topic = "first_topic";
             String value = "goodbye, sleep good tonight" + i;
             String key = "id_"+ i;
             // create a producer record

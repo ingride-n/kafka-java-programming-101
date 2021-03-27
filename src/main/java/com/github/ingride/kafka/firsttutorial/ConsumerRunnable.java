@@ -1,5 +1,6 @@
 package com.github.ingride.kafka.firsttutorial;
 
+import com.sun.xml.internal.bind.v2.runtime.output.StAXExStreamWriterOutput;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -14,18 +15,12 @@ import java.util.Arrays;
 import java.util.Properties;
 import java.util.concurrent.CountDownLatch;
 
-public class ConsumerThread implements Runnable {
+public class ConsumerRunnable implements Runnable {
     private CountDownLatch latch;
     private KafkaConsumer<String, String> consumer;
-    private String bootstrapServers, topic, groupId;
 
-    public ConsumerThread(CountDownLatch latch, String bootstrapServers, String topic, String groupId) {
+    public ConsumerRunnable(CountDownLatch latch, String bootstrapServers, String groupId, String topic) {
         this.latch = latch;
-
-        // pass in consumer-related values
-        this.bootstrapServers = bootstrapServers;
-        this.topic = topic;
-        this.groupId = groupId;
 
         // create consumer properties
         Properties properties = new Properties();
@@ -39,36 +34,39 @@ public class ConsumerThread implements Runnable {
         this.consumer = new KafkaConsumer<String, String>(properties);
 
         // subscribe consumer to a topic;
-        consumer.subscribe(Arrays.asList(topic));
+        this.consumer.subscribe(Arrays.asList(topic));
     }
 
     @Override
     public void run() {
         // poll for new data
         try {
+            //System.out.println("LOGGING THIS CRAP 1..............................");
             while (true) {
+                //System.out.println("LOGGING THIS CRAP 2..............................");
                 // logs the records for another_topic
                 // consumes incoming messages to another_topic
                 // can be subscribed to 1+ topics
-                ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+                ConsumerRecords<String, String> records = this.consumer.poll(Duration.ofMillis(100));
 
-                for (ConsumerRecord<String, String> record : records) {
-                    ConsumerDemoWithThread.logger.info("Key: " + record.key() + ", Value: " + record.value());
-                    ConsumerDemoWithThread.logger.info("Partition: " + record.partition() + ", Offset: " + record.offset());
+                for (ConsumerRecord<String, String> record: records) {
+                    ConsumerDemoWithThread.logger.info("Key: " + record.key() + ", Value: "+record.value());
+                    ConsumerDemoWithThread.logger.info("Partition: "+record.partition() + ", Offset: "+record.offset());
                 }
+                //System.out.println("NOT THIS CRAP..............................");
             }
         } catch (WakeupException e) {
-            ConsumerDemoWithThread.logger.info("Received shutdown signal@");
+            ConsumerDemoWithThread.logger.info("Received shutdown signal");
         } finally {
-            consumer.close();
+            this.consumer.close();
             // tell our main code we're done with this consumer
-            latch.countDown();
+            this.latch.countDown();
         }
     }
 
     public void shutdown() {
         // it interrupts the consumer.poll() process
         // it will throw a WakeUpException
-        consumer.wakeup();
+        this.consumer.wakeup();
     }
 }

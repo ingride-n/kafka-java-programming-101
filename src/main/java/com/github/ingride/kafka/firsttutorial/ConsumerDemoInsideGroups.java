@@ -12,12 +12,12 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.Properties;
 
-public class ConsumerDemoGroups {
+public class ConsumerDemoInsideGroups {
     public static void main(String[] args) {
-        Logger logger = LoggerFactory.getLogger(ConsumerDemoGroups.class.getName());
+        Logger logger = LoggerFactory.getLogger(ConsumerDemoInsideGroups.class.getName());
 
         String bootstrapServers = "127.0.0.1:9092";
-        String groupId = "my-fourth-application";
+        String groupId = "my-third-application";
 
         // create consumer properties
         Properties properties = new Properties();
@@ -42,7 +42,7 @@ public class ConsumerDemoGroups {
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
 
             for (ConsumerRecord<String, String> record: records) {
-                logger.info("Key: " + record.key() + "Value: "+record.value());
+                logger.info("Key: " + record.key() + ", Value: "+record.value());
                 logger.info("Partition: "+record.partition() + ", Offset: "+record.offset());
             }
         }
