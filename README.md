@@ -1,1 +1,1 @@
-# ingride-beginners-proj
+# kafka-java-programming-101
