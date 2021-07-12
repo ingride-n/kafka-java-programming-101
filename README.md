@@ -13,11 +13,11 @@
 cd kafka_2.21-<version>/bin
 ls 
 ```
-- [ ] Try using the CLI command to `list topics`
+- [ ] Try using a CLI command (list topics)
 ```
 kafka-topics.sh
 ```
-- [ ] Add the Kafka CLI command in your `PATH`: 
+- [ ] Add the Kafka CLI commands in your `PATH`: 
 
 ### Install Java
 - [ ] Check the current version of Java on your computer:
