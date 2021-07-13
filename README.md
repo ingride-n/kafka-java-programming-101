@@ -42,7 +42,7 @@ export PATH="$PATH:Users/<user>/kafka_2.12-<version>/bin"
 
 ## Start Zookeeper and Kafka
 1. Navigate to the `kafka_2.12-<version>` directory. Make sure you have a `config/` directory. 
-2. Create your own directory to store log data:
+2. Create your own data directory to store log data:
 ```
 mkdir data
 mkdir data/zookeeper
