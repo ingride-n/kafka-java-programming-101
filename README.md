@@ -19,18 +19,18 @@ brew cask install java8
 ```
 
 ### Try the Kafka CLI
-- [ ] List all commands in the `bin` directory:
+List all commands in the `bin` directory:
 ```
 cd kafka_2.12-<version>/bin
 ls 
 ```
-- [ ] Try using a CLI command (list topics)
+Try using a CLI command (list topics)
 ```
 kafka-topics.sh
 ```
-- [ ] Add the Kafka CLI commands to your `PATH` variable. Append the following line at the end of your `~/.bash_profile`. To get accurate path to your kafka `bin` directory, execute `pwd` from that location.
+Add the Kafka CLI commands to your `PATH` variable. Append the following line at the end of your `~/.bash_profile`. To get an accurate path to your kafka `bin` directory, execute `pwd` from that location.
 ```
 export PATH="$PATH:Users/<user>/kafka_2.12-<version>/bin"
 ```
-- [ ] Navigate to a different directory. Try out the command interface by typing `kafka-` followed by the tab. It should list all commands. Use arrow keys to navigate and type Enter to execute. 
+Navigate to a different directory. Try out the command interface by typing `kafka-` followed by the tab. It should list all commands. Use arrow keys to navigate and type Enter to execute. 
 
