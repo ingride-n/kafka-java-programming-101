@@ -18,7 +18,7 @@ brew tap caskroom/versions
 brew cask install java8
 ```
 
-### Try the Kafka CLI
+## Try the Kafka CLI
 1. List all commands in the `bin` directory:
 ```
 cd kafka_2.12-<version>/bin
