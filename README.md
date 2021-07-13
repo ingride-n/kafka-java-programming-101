@@ -56,11 +56,11 @@ dataDir=<full-path-kafka>/data/zookeeper
 ```
 log.dirs=<full-path-kafka>/data/kafka
 ```
-6. Start the zookeeper server (once it is started, you will get a message that it is binding to port 2181):
+6. Start a zookeeper server. Once it is started, you will get a message that it is binding to port 2181.
 ```
 zookeeper-server-start config/zookeeper.properties
 ```
-6. In a second terminal window, start your kafka server (hosted on port 9092):
+6. Open a second terminal window and start a kafka server. It is hosted on port 9092.
 ```
 kafka-server-start config/server.properties
 ```
