@@ -40,7 +40,7 @@ export PATH="$PATH:Users/<user>/kafka_2.12-<version>/bin"
 ```
 4. Navigate to a different directory. Try out the command interface by typing `kafka-` followed by the tab. It should list all commands. Use arrow keys to navigate and type Enter to execute. 
 
-## Start Zookeeper and Kafka Servers
+## Start Zookeeper and Kafka
 1. Navigate to your `kafka_2.12-<version>` directory. Make sure you have a `config/` directory. 
 2. Create a data directory:
 ```
