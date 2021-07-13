@@ -34,3 +34,5 @@ export PATH="$PATH:Users/<user>/kafka_2.12-<version>/bin"
 ```
 4. Navigate to a different directory. Try out the command interface by typing `kafka-` followed by the tab. It should list all commands. Use arrow keys to navigate and type Enter to execute. 
 
+Done with setup!
+
