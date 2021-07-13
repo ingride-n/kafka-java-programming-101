@@ -60,7 +60,7 @@ log.dirs=<full-path-kafka>/data/kafka
 ```
 zookeeper-server-start config/zookeeper.properties
 ```
-6. In a second terminal window, start your kafka server (binds to port 9092):
+6. In a second terminal window, start your kafka server (hosted on port 9092):
 ```
 kafka-server-start config/server.properties
 ```
