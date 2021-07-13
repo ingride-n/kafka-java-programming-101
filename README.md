@@ -33,7 +33,7 @@ ls
 ```
 kafka-topics.sh
 ```
-3. Add the Kafka CLI commands to your `PATH` variable. Append the following line at the end of your `~/.bash_profile`. To get an accurate path to your kafka `bin` directory, execute `pwd` from that location.
+3. Add the Kafka CLI commands to your `PATH` variable by appending the following line at the end of your `~/.bash_profile`. To get an accurate path to your kafka `bin` directory, execute `pwd` from that location.
 ```
 export PATH="$PATH:Users/<user>/kafka_2.12-<version>/bin"
 ```
