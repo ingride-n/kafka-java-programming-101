@@ -18,7 +18,12 @@ brew tap caskroom/versions
 brew cask install java8
 ```
 
-### Try the Kafka CLI
+### Install IntelliJ
+
+
+Done with setup!
+
+## Try the Kafka CLI
 1. List all commands in the `bin` directory:
 ```
 cd kafka_2.12-<version>/bin
@@ -33,6 +38,4 @@ kafka-topics.sh
 export PATH="$PATH:Users/<user>/kafka_2.12-<version>/bin"
 ```
 4. Navigate to a different directory. Try out the command interface by typing `kafka-` followed by the tab. It should list all commands. Use arrow keys to navigate and type Enter to execute. 
-
-Done with setup!
 
