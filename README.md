@@ -52,7 +52,7 @@ mkdir data/kafka
 ```
 dataDir=<full-path-kafka>/data/zookeeper
 ```
-4. Edit your `config/server.properties` file:
+4. Update your `config/server.properties` file too:
 ```
 log.dirs=<full-path-kafka>/data/kafka
 ```
