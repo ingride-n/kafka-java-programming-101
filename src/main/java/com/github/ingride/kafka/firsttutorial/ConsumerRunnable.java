@@ -41,9 +41,7 @@ public class ConsumerRunnable implements Runnable {
     public void run() {
         // poll for new data
         try {
-            //System.out.println("LOGGING THIS CRAP 1..............................");
             while (true) {
-                //System.out.println("LOGGING THIS CRAP 2..............................");
                 // logs the records for another_topic
                 // consumes incoming messages to another_topic
                 // can be subscribed to 1+ topics
@@ -53,7 +51,6 @@ public class ConsumerRunnable implements Runnable {
                     ConsumerDemoWithThread.logger.info("Key: " + record.key() + ", Value: "+record.value());
                     ConsumerDemoWithThread.logger.info("Partition: "+record.partition() + ", Offset: "+record.offset());
                 }
-                //System.out.println("NOT THIS CRAP..............................");
             }
         } catch (WakeupException e) {
             ConsumerDemoWithThread.logger.info("Received shutdown signal");
